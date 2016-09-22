@@ -1,0 +1,26 @@
+Step 1 (without nginx)
+
+[root@web2 ~]# puppet agent --server chef-server.minsk.epam.com -t
+Info: Using configured environment 'production'
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Loading facts
+Info: Caching catalog for web2.minsk.epam.com
+Info: Applying configuration version '1474553694'
+Notice: /Stage[main]/Main/Mysql::Db[prod_mdb]/Mysql_database[prod_mdb]/ensure: created
+Notice: /Stage[main]/Main/Mysql::Db[prod_mdb]/Mysql_grant[prod_user@localhost/prod_mdb.*]/ensure: created
+Notice: Applied catalog in 0.36 seconds
+
+
+Step 2 (with nginx)
+[root@web2 ~]# puppet agent --server chef-server.minsk.epam.com -t
+Info: Using configured environment 'production'
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Loading facts
+Info: Caching catalog for web2.minsk.epam.com
+Info: Applying configuration version '1474553912'
+Notice: /Stage[main]/Nginx/Package[nginx]/ensure: created
+Notice: /Stage[main]/Nginx/Service[nginx]/ensure: ensure changed 'stopped' to 'running'
+Info: /Stage[main]/Nginx/Service[nginx]: Unscheduling refresh on Service[nginx]
+Notice: Applied catalog in 48.51 seconds
