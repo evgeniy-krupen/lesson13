@@ -84,5 +84,6 @@ $ puppet agent --server chef-server.minsk.epam.com -t --environment prod
 **5. Report**
 ![](https://github.com/evgeniy-krupen/lesson13/blob/master/source/f_graph.png)
 
+[Log](https://github.com/evgeniy-krupen/lesson13/blob/master/file.log)
 
 
